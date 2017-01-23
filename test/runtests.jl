@@ -1,5 +1,5 @@
 using DispatchError
 using Base.Test
 
-# write your own tests here
-@test 1 == 2
+# this fails with error "boo!"
+DispatchError.Foo(rand(3), rand(3), 1)
