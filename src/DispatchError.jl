@@ -1,4 +1,4 @@
-isdefined(Base, :__precompile__) && __precompile__()
+__precompile__()
 
 module DispatchError
 
@@ -12,6 +12,6 @@ end
 
 Foo(args...) = error("boo!")
 
-Foo{A<:AbstractArray,B<:AbstractArray}(a::A, b::B, c::Int = 1) = info("yay!")
+Foo{A<:AbstractArray,B<:AbstractArray}(a::A, b::B, c::Int) = info("yay!")
 
 end # module
