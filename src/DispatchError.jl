@@ -10,11 +10,8 @@ immutable Foo{A,B}
     Foo(a, b, c) = new(a, b, c)
 end
 
-# "private" convienence constructor
-_Foo{A,B}(a::A, b::B, c::Int) = Foo{A,B}(a, b, c)
-
 Foo(args...) = error("boo!")
 
-Foo(a::AbstractArray, b::AbstractArray, c::Int = 1) = _Foo(a, b, c)
+Foo{A<:AbstractArray,B<:AbstractArray}(a::A, b::B, c::Int = 1) = info("yay!")
 
 end # module
